@@ -1,0 +1,287 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: #07140d;
+    color: white;
+}
+
+.background {
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at center, #124d2d 0%, #07140d 65%);
+    z-index: -1;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px 20px;
+}
+
+.home {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.logo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #c9a227;
+    color: #07140d;
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 52px;
+    letter-spacing: 8px;
+}
+
+.subtitle {
+    color: #b7c5bb;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.menu {
+    width: 100%;
+    max-width: 350px;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.main-button,
+.secondary-button {
+    width: 100%;
+    padding: 16px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    border: none;
+}
+
+.main-button {
+    background: #c9a227;
+    color: #101010;
+}
+
+.main-button:hover {
+    background: #e0bb39;
+}
+
+.secondary-button {
+    background: #14271c;
+    color: white;
+    border: 1px solid #375b45;
+}
+
+.panel {
+    max-width: 450px;
+    margin: 100px auto;
+    padding: 35px;
+    background: rgba(10, 25, 17, .95);
+    border: 1px solid #31533d;
+    border-radius: 16px;
+}
+
+.panel h2 {
+    margin: 25px 0;
+    font-size: 30px;
+}
+
+.panel label {
+    display: block;
+    margin-bottom: 8px;
+    color: #b7c5bb;
+}
+
+.panel input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    background: #07140d;
+    border: 1px solid #385843;
+    border-radius: 8px;
+    color: white;
+    outline: none;
+}
+
+.back {
+    background: none;
+    border: none;
+    color: #c9a227;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* TABLE */
+
+.table-screen {
+    min-height: 90vh;
+}
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0 25px;
+}
+
+.table-header span {
+    display: block;
+    font-size: 11px;
+    color: #879a8c;
+}
+
+.table-header strong {
+    font-size: 22px;
+    color: #c9a227;
+}
+
+.table-header button {
+    background: #261414;
+    color: #ff8d8d;
+    border: 1px solid #633333;
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+
+.casino-table {
+    background: #145b35;
+    border: 8px solid #5c3b1e;
+    border-radius: 180px 180px 30px 30px;
+    min-height: 550px;
+    padding: 60px 30px 30px;
+    box-shadow: inset 0 0 60px rgba(0,0,0,.3);
+}
+
+.dealer-area {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.dealer-area h3,
+.players-area h3 {
+    margin-bottom: 20px;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.card {
+    width: 65px;
+    height: 90px;
+    background: white;
+    color: #111;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.hidden-card {
+    background: #9b1c1c;
+    color: white;
+}
+
+.total {
+    margin-top: 12px;
+}
+
+.players-area {
+    max-width: 700px;
+    margin: auto;
+}
+
+#players {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.player {
+    background: rgba(0,0,0,.25);
+    border: 1px solid rgba(255,255,255,.15);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.player-name {
+    font-weight: bold;
+}
+
+.player-money {
+    color: #d8bc45;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.controls button {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: #c9a227;
+    font-weight: bold;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    h1 {
+        font-size: 36px;
+        letter-spacing: 5px;
+    }
+
+    .casino-table {
+        border-radius: 100px 100px 20px 20px;
+        padding: 40px 15px 20px;
+    }
+
+    #players {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .controls {
+        flex-direction: column;
+    }
+}
