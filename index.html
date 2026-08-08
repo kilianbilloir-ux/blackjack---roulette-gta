@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Blackjack RP</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="background"></div>
+
+    <main class="container">
+
+        <section class="home" id="home">
+
+            <div class="logo">
+                ♠
+            </div>
+
+            <h1>BLACKJACK</h1>
+            <p class="subtitle">Table privée — Argent virtuel</p>
+
+            <div class="menu">
+
+                <button class="main-button" onclick="showCreate()">
+                    🎩 Créer une table
+                </button>
+
+                <button class="secondary-button" onclick="showJoin()">
+                    🎴 Rejoindre une table
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- CRÉER UNE TABLE -->
+
+        <section class="panel hidden" id="createPanel">
+
+            <button class="back" onclick="backHome()">← Retour</button>
+
+            <h2>Créer une table</h2>
+
+            <label>Votre pseudo</label>
+
+            <input
+                id="dealerName"
+                type="text"
+                placeholder="Ex : Kilian"
+                maxlength="20"
+            >
+
+            <button class="main-button" onclick="createTable()">
+                Créer la table
+            </button>
+
+        </section>
+
+
+        <!-- REJOINDRE -->
+
+        <section class="panel hidden" id="joinPanel">
+
+            <button class="back" onclick="backHome()">← Retour</button>
+
+            <h2>Rejoindre une table</h2>
+
+            <label>Votre pseudo</label>
+
+            <input
+                id="playerName"
+                type="text"
+                placeholder="Ex : Jhon"
+                maxlength="20"
+            >
+
+            <label>Code de la table</label>
+
+            <input
+                id="tableCode"
+                type="text"
+                placeholder="Ex : BJ-4821"
+                maxlength="7"
+            >
+
+            <button class="main-button" onclick="joinTable()">
+                Rejoindre
+            </button>
+
+        </section>
+
+
+        <!-- TABLE -->
+
+        <section class="table-screen hidden" id="tableScreen">
+
+            <header class="table-header">
+
+                <div>
+                    <span>TABLE</span>
+                    <strong id="displayCode">BJ-0000</strong>
+                </div>
+
+                <button onclick="leaveTable()">
+                    Quitter
+                </button>
+
+            </header>
+
+
+            <div class="casino-table">
+
+                <div class="dealer-area">
+
+                    <h3>🎩 CROUPIER</h3>
+
+                    <div class="cards" id="dealerCards">
+                        <div class="card hidden-card">?</div>
+                        <div class="card hidden-card">?</div>
+                    </div>
+
+                    <div class="total">
+                        Total : <span id="dealerTotal">?</span>
+                    </div>
+
+                </div>
+
+
+                <div class="players-area">
+
+                    <h3>JOUEURS <span id="playerCount">0</span>/6</h3>
+
+                    <div id="players"></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="controls" id="dealerControls">
+
+                <button onclick="newRound()">
+                    🃏 Nouvelle manche
+                </button>
+
+                <button onclick="dealCards()">
+                    🎴 Distribuer
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
